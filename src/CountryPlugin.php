@@ -137,6 +137,10 @@ class CountryPlugin implements PluginInterface, EventSubscriberInterface
     protected static function generateConfig($csvFile, $phpFile)
     {
         $csv  = array_map('str_getcsv', file($csvFile));
+
+        // START DEBUG.
+        var_dump( $csv );
+
         $data = '<?php' . PHP_EOL;
         $data .= '/* DO NOT EDIT! This file has been automatically generated. Run composer update to fetch a new version. */' . PHP_EOL;
         $data .= 'return [' . PHP_EOL;
