@@ -108,7 +108,9 @@ class CountryPlugin implements PluginInterface, EventSubscriberInterface
 
         $curl = curl_init();
         curl_setopt_array($curl, $options);
-        curl_exec($curl);
+        // START DEBUG
+        $exec = curl_exec($curl);
+        var_dump($exec);
         curl_close($curl);
     }
 
