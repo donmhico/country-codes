@@ -101,9 +101,10 @@ class CountryPlugin implements PluginInterface, EventSubscriberInterface
     {
         $fileHandle = fopen($filename, 'w');
         $options    = [
-            CURLOPT_FILE    => $fileHandle,
-            CURLOPT_TIMEOUT => 600,
-            CURLOPT_URL     => $url,
+            CURLOPT_FILE           => $fileHandle,
+            CURLOPT_TIMEOUT        => 600,
+            CURLOPT_URL            => $url,
+            CURLOPT_SSL_VERIFYPEER => false,
         ];
 
         $curl = curl_init();
